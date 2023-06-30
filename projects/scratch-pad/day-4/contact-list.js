@@ -35,27 +35,69 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    var contact = {};
 
+    contact.id = id;
+    contact.nameFirst = nameFirst;
+    contact.nameLast = nameLast;
 } 
-
+return contact;
 
 function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
+
             return contacts.length;
+        }, 
+        // 2. Takes a contact object to be added to contacts
+        addContact: function(contact) {
+            
+            return contacts.push(contact);
+        },
+         /* 3. Takes a full name string and returns the contact object if found in the contacts-list, or, 
+ *         undefined if the fullName does not match any contacts in the list*/
+         findContact(fullName) {
+
+
+            for (i = 0; i <= contacts.length; i++) {
+                
+                if (fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]) {
+                    return contact;
+                }
+            }
+
+
+         },
+         // 4. Takes a contact object to be removed from the contact list
+         removeContact(contact) {
+            
+            for (var j = 0; j <= contacts.length; j++) {
+                if (contacts[j] === contact) {
+                    delete contacts[j];
+                }
+            }
+         },
+         /* 5. add a printAllContactNames() Function to your makeContactList() factory. The printAllContactNames() Function should 
+ *         return a String formated with all the full-names of the separated*/
+         printAllContactNames: function() {
+         var names = contacts.map(function(contact) {
+
+            return contact["nameFirst"] + ' ' + contact["nameLast"];
+        });
+
+
+            return names.join('');
         }
+            
     }
+    
 }
-
-
-
-
 // YOUR CODE GOES ABOVE HERE //
 
 
@@ -68,3 +110,4 @@ if((typeof process !== 'undefined') &&
     module.exports.makeContact = makeContact;
     module.exports.makeContactList = makeContactList;
 }
+

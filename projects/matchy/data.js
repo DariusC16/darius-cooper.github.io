@@ -133,7 +133,7 @@ console.log(animals[0]);
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var animal, noises, animals, friends, getRandom;
+ //var animal, noises, animals, friends, getRandom;
 if((typeof process !== 'undefined') &&
    (typeof process.versions.node !== 'undefined')) {
      module.exports.animal = animal || null;

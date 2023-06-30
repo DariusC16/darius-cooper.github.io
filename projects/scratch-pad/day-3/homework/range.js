@@ -23,7 +23,19 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
+    let output = [];
+    if (start < end) {
+      //  loop start to end
+       for (let x = start; x <= end; x++) {
+        output.push(x);
+       }
+      } else { 
+        //loop goes from end to start
+        for (let x = start; x >= end; x--) {
+          output.push(x);
+        }
+      }
+      return output;
     
     
     
