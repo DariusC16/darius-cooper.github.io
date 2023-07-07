@@ -95,9 +95,27 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    if (value === null) {
+        return "null";
+    } else if (value instanceof Date) {
+        return "date";
+        // AFTER DOING THOSE TWO FIRST THEN YOU CAN DO THE OTHERS
+
+    }  else if (typeof value === "string") {
+        return "string";
+    } else if (Array.isArray(value)) {
+        return "array";
+    } else if (typeof value === "object") {
+        return "object";
+    } else if (typeof value === "undefined") {
+        return "undefined";
+    } else if (typeof value === "number") {
+        return "number";
+    } else if (typeof value === "boolean") {
+        return "boolean";
+    }  else {
+        return "function"
+    }    
     
     // YOUR CODE ABOVE HERE //
 }

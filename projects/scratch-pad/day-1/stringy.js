@@ -187,23 +187,19 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    var b = [];
-    var w = [];
-    
-    b.push();
-    w.push();
+    /* stringOne = stringOne.split('').sort().length;
 
-     b.sort(function(a, b) {return a-b});
-     w.sort(function(a, b) {return a-b});
-      
-    if (b > w) {
-          return 1;
-      } else if (b < w) {
-          return -1;
-      } else if (b === w) {
-        return 0;
-      }
+    stringTwo = stringTwo.split('').sort().length; */
   
+
+    if (stringOne < stringTwo) {
+        return 1;
+    } else if (stringOne > stringTwo) {
+        return -1;
+    } else {
+        return 0;
+    }
+
   
 
     // YOUR CODE ABOVE HERE //
@@ -219,24 +215,15 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    var b = [];
-    var w = [];
-    
-    i.push();
-    j.push();
-
-     i.sort(function(a, b) {return b-a});
-     j.sort(function(a, b) {return b-a});
-      
-    if (i < j) {
-          return 1;
-      } else if (j < i) {
-          return -1;
-      } else if (i === j) {
+    if (stringOne > stringTwo) {
+        return 1;
+    } else if (stringOne < stringTwo) {
+        return -1;
+    } else {
         return 0;
-      }
-
-
+    }
+    
+    
 
     // YOUR CODE ABOVE HERE //
 }

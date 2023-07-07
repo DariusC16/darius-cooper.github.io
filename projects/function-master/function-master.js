@@ -3,6 +3,14 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
+     //should return array so init a storage array
+     var store = [];
+     //for var in obj
+     for (var key in object) {
+         //should add values to array in each loop
+         store.push(object[key]); 
+     }
+     return store;
 
 } 
 
@@ -11,6 +19,7 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+    return Object.keys(object).join(' ');
 
 }
 
@@ -19,6 +28,21 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
+    var store = [];
+    //for var in loop
+    for (var key in object) {
+     
+        //should add values to array in each loop
+        store.push(object[key]); 
+    
+    }
+  var string = []
+  for (var i = 0; i < store.length; i++) {
+    if (typeof store[i] === 'string'){
+      string.push(store[i]);
+    }
+  }
+    return string.join(' ');
     
 }
 
@@ -27,6 +51,12 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
+     //should use Array.isArray to determine if array. if not return object
+     if (Array.isArray(collection)) {
+        return 'array';
+    } else {
+        return 'object';
+    }
     
 }
 
@@ -35,6 +65,8 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
+     //use .charAt(0), .toUpperCase() and .slice(1) -removes first letter of string methods to make a very dry code
+     return string.charAt().toUpperCase() + string.slice(1);
     
 }
 
@@ -43,6 +75,14 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
+        //we need to split our string into an array
+        var words = string.split(" ");
+        //for loop
+        for (var i = 0; i < words.length; i++) {
+            //loop through and make the word[i] = to the first letter capitalized concat with a sliced remainder of word[i]
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+        }
+        return words.join(" ");
     
 }
 

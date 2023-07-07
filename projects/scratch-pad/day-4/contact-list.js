@@ -35,13 +35,14 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-    var contact = {};
+    var obj;
+    obj = {};
 
-    contact.id = id;
-    contact.nameFirst = nameFirst;
-    contact.nameLast = nameLast;
-} 
-return contact;
+    obj["id"] = id;
+    obj["nameFirst"] = nameFirst;
+    obj["nameLast"] = nameLast; 
+return obj;
+}
 
 function makeContactList() {
     /*
@@ -63,41 +64,38 @@ function makeContactList() {
          /* 3. Takes a full name string and returns the contact object if found in the contacts-list, or, 
  *         undefined if the fullName does not match any contacts in the list*/
          findContact(fullName) {
-
-
-            for (i = 0; i <= contacts.length; i++) {
+            // LOOPING THROUGH THE CONTACT LIST
+            for (var i = 0; i <= contacts.length - 1; i++) {
                 
-                if (fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]) {
-                    return contact;
+                if (contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"] === fullName) {
+                    return contacts[i];
                 }
             }
-
-
-         },
+                return undefined;
+            },
          // 4. Takes a contact object to be removed from the contact list
          removeContact(contact) {
-            
-            for (var j = 0; j <= contacts.length; j++) {
-                if (contacts[j] === contact) {
-                    delete contacts[j];
-                }
-            }
+
+            return contacts.splice(contact[contact.id], 1);
+
          },
          /* 5. add a printAllContactNames() Function to your makeContactList() factory. The printAllContactNames() Function should 
  *         return a String formated with all the full-names of the separated*/
          printAllContactNames: function() {
-         var names = contacts.map(function(contact) {
+            var printAll; 
+            printAll = [];
 
-            return contact["nameFirst"] + ' ' + contact["nameLast"];
-        });
-
-
-            return names.join('');
+            for (var i = 0; i < contacts.length; i++) {
+                printAll.push(contacts[i].nameFirst + " " + contacts[i].nameLast);
+            }
+            return printAll.join('\n');
         }
             
     }
     
 }
+
+console.log(makeContactList);
 // YOUR CODE GOES ABOVE HERE //
 
 

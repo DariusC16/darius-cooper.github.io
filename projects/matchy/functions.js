@@ -17,21 +17,27 @@
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function search(animals, string) {
-    for (var i = 0; i <= animals.length; i++) {
-        if (animals[i].hasOwnProperty('name')) {
-
-          if (animals[i].name === string) {
-            return animals[i]
-          }
-        }
+console.log(animals, string, 'third');
+ for (var i = 0; i <= animals.length - 1; i++) {
+        if (animals[i].name === string) {
+          return animals[i];
+        } /*else if (!animals[i].name) {
+          return null;
+        }*/
     }
+    return null;
 }
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function replace() {
+function replace(animals, string, replacement) {
+  for (var j = 0; j <= animals.length - 1; j++) {
+    if (animals[j]['name'] === string) {
+      animals[j] = replacement; 
+    }
+  }
 
 }
 
@@ -39,13 +45,27 @@ function replace() {
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function remove(animals, name) {
+  for (var i = 0; i < animals.length; i++) {
+      if (animals[i].name === name) {
+      animals.splice(animals[i], 1);
+   }
+  }
+}
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function add(animals, animal) {
+    
+  for (var i = 0; i < animals.length; i++) {
+  if (animal.name.length > 0 && animal.species.length > 0 && animal.name !== animals[i].name) {
+      animals.push(animal);
+  } 
+  return animals;
+}
+}
 
 
 /**
@@ -65,3 +85,4 @@ if((typeof process !== 'undefined') &&
     module.exports.remove = remove || null;
     module.exports.add = add || null;
 }
+
