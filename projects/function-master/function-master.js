@@ -3,14 +3,13 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-     //should return array so init a storage array
-     var store = [];
-     //for var in obj
-     for (var key in object) {
-         //should add values to array in each loop
-         store.push(object[key]); 
-     }
-     return store;
+         //create storage arr
+    let arr = [];
+    //for in loop
+    for(let key in object){
+        arr.push(object[key])//push values into arr
+    }
+    return arr;//return arr
 
 } 
 
@@ -91,6 +90,9 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
+     //capitalize object name
+     let name = object.name.charAt(0).toUpperCase() + object.name.slice(1);  
+     return 'Welcome ' + name + '!';// return message
 
 }
 
@@ -99,6 +101,11 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
+     //capitalize name
+     let name = object.name.charAt(0).toUpperCase() + object.name.slice(1);
+     //capitalize species
+     let species = object.species.charAt(0).toUpperCase() + object.species.slice(1);
+     return name + ' is a ' + species;
 
 }
 
@@ -107,6 +114,12 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+      //if noises is an array and has a value
+      if(Array.isArray(object.noises) && object.noises.length > 0){
+        return object.noises.join(' ');// return joined with spaces
+      } else{
+        return 'there are no noises';//else return message
+      }
 
 }
 
@@ -115,6 +128,7 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+    return string.includes(word);
 
 }
 
@@ -123,6 +137,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
+    object.friends.push(name);
+    return object;
 
 }
 
@@ -131,6 +147,12 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+        //if friends is an array
+        if(Array.isArray(object.friends)){
+            return object.friends.includes(name);//check friends includes name
+          }else {
+            return false;//else false
+          }
 
 }
 
@@ -139,6 +161,16 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+      //storage arr
+      let unfriend = [];
+      //loop
+      for(let i = 0; i < array.length; i++){
+        //if friends !include name and array.name != name  
+        if(!array[i].friends.includes(name) && array[i].name !== name){
+            unfriend.push(array[i].name);//push array.name to arr
+        }
+      }
+      return unfriend;//return arr
 
 }
 
@@ -147,6 +179,9 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
+      //create key and assign value
+      object[key] = value;
+      return object;// return obj
 
 }
 
@@ -155,7 +190,11 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+        //loop
+        for(let i = 0; i < array.length; i++){
+            //delete prop
+            delete object[array[i]];
+          }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -163,6 +202,16 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+     //storage arr
+     let arr = [];
+     //loop
+     for(let i = 0; i < array.length; i++){
+       //if arr does not include array[i]
+       if(!arr.includes(array[i])){
+         arr.push(array[i]);//push
+       }
+     }
+     return arr;// return arr
 
 }
 
