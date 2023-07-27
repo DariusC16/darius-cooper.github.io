@@ -99,6 +99,6 @@ console.log(typeof true); //boolean
 //and finally the expression to execute if the condition is falsy. 
 //This operator is frequently used as an alternative to an if...else statement.
 //condition ? exprIfTrue : exprIfFalse
-const age = 26;
-const beverage = age >= 21 ? "Beer" : "Juice";
-console.log(beverage); // "Beer"
+const age = 20;
+const beverage = age >= 30 ? "Soda" : "Juice";
+console.log(beverage); // "Soda"

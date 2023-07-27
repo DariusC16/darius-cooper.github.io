@@ -91,7 +91,7 @@ function addNum (num1, num2) {
   */
   
   // function init() {
-  //   var name = "James"; // name is a local variable created by init
+  //   var name = "Darius"; // name is a local variable created by init
   //   function displayName() {
   //     // displayName() is the inner function, that forms the closure
   //     console.log(name); // use variable declared in the parent function

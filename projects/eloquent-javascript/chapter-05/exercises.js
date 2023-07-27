@@ -36,7 +36,32 @@ function every(arr, func) {
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
+function dominantDirection(string) {
+  
+   var arrLit1 = [];
+   
+   var arrLit2 = [];
+ 
+   //loop string
+   for(let i = 0; i < string.length; i++){
+     //create script and assign it the result of invoking characterScript on the characters char code
+     let script = characterScript(string.charCodeAt(i));
+ 
+     //determing if script is not equal to null
+     if(script !== null){
+       if(script.direction === 'arrLit1'){
+         ltr.push(script);//if script direction is arrLit1, push to arrLit1
+       } else{
+         arrLit2.push(script);//else push to arrLit2
+       }
+     }
+   }
+   
+   if(arrLit1.length > arrLit2.length){
+     return 'arrLit1';
+   } else{
+     return 'arrLit2';
+   }
 
 }
 

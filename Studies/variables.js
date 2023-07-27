@@ -23,8 +23,8 @@
 var name;
 
 //Assignment
-// name is now assigned to the string James as it's value
-var name = 'James';
+// name is now assigned to the string Christina as it's value
+var name = 'Christina';
 //***********************************************************************************/
 //2. var, let and const//
 //***********************************************************************************/
@@ -201,13 +201,13 @@ var name = 'James';
 //  * moved to the top of their scope before code execution. This means that if we do this:
 //  * 
 //  *   console.log (greeter);
-//     var greeter = "say hello"
+//     var greeter = "Hey"
 
 // it is interpreted as this:
 
     var greeter;
     console.log(greeter); // greeter is undefined
-    greeter = "say hello"
+    greeter = "Hey"
 
 // So var variables are hoisted to the top of their scope and initialized with a value of undefined.
 

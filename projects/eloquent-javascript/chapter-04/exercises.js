@@ -2,7 +2,7 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range(num1, num2, step) {
+function range(num1, num2, step=1) {
   let store = [];
    
   if (step === undefined) {
@@ -34,19 +34,12 @@ function range(num1, num2, step) {
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum(array) {
-  if (array.length === 1){
-    return array[0];
-  }
-  //init storage var
-  let sum = 0;
-  //forloop
-  for (var i = 0; i < array.length; i++){
-    //aditional operator so sum is added each loop
-    sum += array[i];
-  }
-  return sum;
-
+function sum(array, n=0) {
+    // if n is equal to array length
+    if (n === array.length) {
+      return 0;// return 0
+    }
+    return array[n] + sum(array, n + 1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

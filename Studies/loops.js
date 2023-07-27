@@ -100,10 +100,10 @@ for (let step = 0; step < 5; step++) {
   */
   
   let object = {
-    name: 'James',
-    age: 38,
-    hairColor: 'Brown',
-    height: '6 Feet'
+    name: 'Darius',
+    age: 19,
+    hairColor: 'black',
+    height: '5ft 9in'
   }
   
   for (var key in object){

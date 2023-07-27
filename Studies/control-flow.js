@@ -11,17 +11,17 @@ runs across the (extremely frequent) structures that change the control flow, su
 The if...else statement executes a statement if a specified condition is truthy. 
 If the condition is falsy, another statement in the optional else clause will be executed.
 */
-var name = 'James';
+var name = 'Darius';
 //if statements can be used to test for a multitude of things. 
 //If the if statement is evaluated to be truthy, the code block executes.
-if (name === 'James') {
+if (name === 'Darius') {
   console.log('Correct');
 }
 //We can use an ELSE statement to execute a different code block if the if statement is falsey
 
-var userName = 'Stephan';
+var userName = 'Rodman';
 
-if (userName === 'James') {
+if (userName === 'Darius') {
   console.log('Welcome');
 } else {
   console.log('Access Denied')
@@ -32,9 +32,9 @@ if (userName === 'James') {
 Else if statements can be chained to an if statement so we can run a series of conditional tests on a piece of data.
 */
 
-if (userName === 'James') {
+if (userName === 'Darius') {
   console.log('Welcome');
-} else if (userName === 'Stephan') {
+} else if (userName === 'Rodman') {
   console.log('Welcome, Guest')
 }
 

@@ -26,7 +26,7 @@ console.log(number);
  *          A substring of the original using substring().
  *          A concatenation of two strings using the concatenation operator (+) or concat().
  */
-var name = 'James'
+var name = 'Pete'
 //strings can be concated as well
 console.log('Hello, my name is ' + name);
 

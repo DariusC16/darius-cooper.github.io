@@ -3,7 +3,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
-const { isNull, isArray } = require("lodash");
+//const { isNull, isArray } = require("lodash");
 
 var _ = {};
 
@@ -22,7 +22,7 @@ var _ = {};
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
-function identity(value) {
+_.identity = function(value) {
     // RETURN <value> UNCHANGED
     return value;
 }
@@ -46,7 +46,7 @@ function identity(value) {
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-function typeOf(value) {
+ _.typeOf = function(value) {
     if (Array.isArray(value)) {
         return 'array';
     } else if (value === null) {
